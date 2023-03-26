@@ -1,0 +1,143 @@
+@use 'FHF-mixins' as *
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap')
+body
+    font-family: 'Red Hat Display', sans-serif
+main
+    .container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding:
+            top: 50px
+        gap: 50px
+
+        .logo
+            display: flex
+            justify-content: center
+        .hero
+            img
+                width: 100%
+        .textAndBtn
+            margin: 0 auto
+            text-align: center
+            h1
+                font-size: clamp(2rem , 5vw + 1rem , 3.1rem)
+                color: #28283d
+                font-weight: 900
+            p
+                color: #9e9eaf
+                font-weight: 500
+.btn
+    margin-top: 40px
+    display: flex
+    flex-direction:  row
+    justify-content: center
+    align-items:  center
+    gap: 10px
+    button
+        padding: 16px 40px
+        border-radius: 40px
+        border: none
+        font-weight: 900
+        color: #fbf9fc
+        width: fit-content
+        &.btn1
+            background: #4d96a8
+            span
+                color: #8fe3f9
+        &.btn2
+            background: #855fb1
+.counter
+    text-align:  center
+    padding: 
+        top: 100px
+    span
+        padding: 24px
+        background: #fafafa
+        border-radius: 50%
+        width: fit-content
+        height: fit-content
+        border: 2px solid #eeeef0
+        display: block
+        position: relative
+        margin: 0 auto
+        &::after 
+            content: ''
+            position: absolute
+            display: block
+            width: 2px
+            height: 100px
+            background-color: #eeeef0
+            top: -100px
+            left: 31px
+
+
+@media (min-width: 1200px) 
+    .container 
+        width: 1000px !important
+@media ( max-width: 600px )
+    main
+        .container
+            .textAndBtn
+                .btn
+                    flex-direction:  column 
+    
+.photosAndText
+    margin-top: 50px
+    text-align:  center
+    .photos
+        display: grid
+        grid-template-columns:  1fr 1fr 1fr 1fr
+        gap: 10px
+        img
+            width: 100%
+            border-radius: 20px
+    .text
+        margin:
+            top: 30px
+            bottom: 50px
+        span
+            font-variant: petite-caps
+            text-transform:  uppercase
+            letter-spacing: .4rem
+            font-size: 1.2rem
+            font-weight: 900
+            color: #4d96a8
+        .h1
+            color: #28283d
+            font-weight: 900
+            font-size: clamp(2rem , 5vw + 1rem , 3.1rem)
+        p
+            line-height: 2rem
+            font-weight: 500
+            font-size: clamp(0.5rem , 5vw + 1rem , 1rem)
+            color: #87879d
+    footer
+        background: url(../images/bg.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        margin:
+            top: -30px
+        color: #fff
+        .overlay
+            background: rgba(77, 150, 168, 0.8)
+            padding: 
+                top: 50px
+                bottom: 50px
+            .btn
+                button
+                    background: #855fb1
+                    span
+                        color: #d9b8ff
+@media (min-width: 762px) and (max-width: 1199px)
+    .photosAndText
+        .photos
+            grid-template-columns: 1fr 1fr !important
+            padding: 0 100px
+@media (max-width: 800px)
+    .photosAndText
+        .photos
+            grid-template-columns: 1fr 
+            padding: 0 clamp(10px , 12vw , 300px)
+
